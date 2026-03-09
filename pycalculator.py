@@ -28,6 +28,7 @@ def get_operation() -> str:
     valid_ops = {"+", "-", "*", "/"}
     while True:
         op = input("Choose operation (+, -, *, / ): ").strip()
+        print("New Operations Coming Soon!")
         if op in valid_ops:
             return op
         print("Invalid operation, please choose one of +, -, *, /")
@@ -62,6 +63,7 @@ def main() -> None:
         again = input("Do another calculation? (y/n): ").strip().lower()
         if again != "y":
             print("Goodbye!")
+            print("New Operations Coming Soon!")
             break
 
 
