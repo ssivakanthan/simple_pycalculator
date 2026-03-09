@@ -15,6 +15,9 @@ def divide(a, b):
         raise ValueError("Cannot divide by zero.")
     return a / b
 
+def power(a, b):
+    return a**b
+
 
 def get_number(prompt: str) -> float:
     while True:
@@ -25,13 +28,13 @@ def get_number(prompt: str) -> float:
 
 
 def get_operation() -> str:
-    valid_ops = {"+", "-", "*", "/"}
+    valid_ops = {"+", "-", "*", "/", "^"}
     while True:
-        op = input("Choose operation (+, -, *, / ): ").strip()
+        op = input("Choose operation (+, -, *, /, ^ ): ").strip()
         print("New Operations Coming Soon!")
         if op in valid_ops:
             return op
-        print("Invalid operation, please choose one of +, -, *, /")
+        print("Invalid operation, please choose one of +, -, *, /, ^")
 
 
 def main() -> None:
@@ -52,6 +55,8 @@ def main() -> None:
                 result = multiply(a, b)
             elif op == "/":
                 result = divide(a, b)
+            elif op == "^":
+                result = power(a, b)
             else:
                 print("Unexpected operation.")
                 continue
